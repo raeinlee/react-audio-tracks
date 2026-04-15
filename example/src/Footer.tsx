@@ -29,7 +29,7 @@ const Footer = (props: Props) => {
         }}
       >
         V1.2.4 MIT © 2023{" "}
-        <a href="https://github.com/AndyLeezard" target="_blank">
+        <a href="https://github.com/raeinlee" target="_blank">
           Andy Lee 🔗
         </a>
       </UI.GlitchedSpan>

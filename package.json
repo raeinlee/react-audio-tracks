@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AndyLeezard/react-audio-tracks.git",
+    "url": "https://github.com/raeinlee/react-audio-tracks.git",
     "demo": "https://react-audio-tracks.vercel.app"
   },
-  "author": "Andy Lee <a.lee.intl@gmail.com> (https://github.com/AndyLeezard)",
+  "author": "Raein Lee <a.lee.intl@gmail.com> (https://github.com/raeinlee)",
   "bugs": {
-    "url": "https://github.com/AndyLeezard/react-audio-tracks/issues"
+    "url": "https://github.com/raeinlee/react-audio-tracks/issues"
   },
-  "homepage": "https://github.com/AndyLeezard/react-audio-tracks#readme",
+  "homepage": "https://github.com/raeinlee/react-audio-tracks#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
