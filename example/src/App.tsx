@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 
 // Util
-import { getFileName, getURLParam } from "./utils"
+import { getURLParam } from "./utils"
 
 // Module
 import { RATM, useAudiotracks } from "."
@@ -97,12 +97,13 @@ function App() {
     console.log(state)
   }, [state])
 
-  const playDemo = (src: string) => {
+  const playDemo = (src: string, keyForSubtitles: string) => {
     if (requestMode) {
       RATM.registerPlayRequests([
         {
           src: src,
           trackIdx: targetTrackIdx,
+          audioOptions: { keyForSubtitles },
           audioCallbacks: {
             onPlay: () => console.log(`onPlay ${src}`),
             onPause: () => console.log(`onPause ${src}`),
@@ -113,10 +114,8 @@ function App() {
            * Arbitrary Metadata that can be used to render a custom modal dialog
            */
           metadata: {
-            title: getFileName(src),
-            description: `Do you want to play ${getFileName(
-              src
-            )} on the track number ${targetTrackIdx}?`,
+            title: keyForSubtitles,
+            description: `Do you want to play ${keyForSubtitles} on the track number ${targetTrackIdx}?`,
             imgsrc: "image",
           },
         },
@@ -124,6 +123,7 @@ function App() {
     } else {
       RATM.registerAudio(src, {
         trackIdx: targetTrackIdx,
+        keyForSubtitles,
         onPlay: () => console.log(`onPlay ${src}`),
         onPause: () => console.log(`onPause ${src}`),
         onUpdate: () => console.log(`onUpdate`),
@@ -243,7 +243,7 @@ function App() {
             <button
               type="button"
               style={{ padding: "0.25rem" }}
-              onClick={() => playDemo(AudioAssets.Intro)}
+              onClick={() => playDemo(AudioAssets.Intro, "intro")}
             >
               <GiChopsticks size={36} />
             </button>
@@ -253,7 +253,7 @@ function App() {
             <button
               type="button"
               style={{ padding: "0.25rem" }}
-              onClick={() => playDemo(AudioAssets.DrumBeat1)}
+              onClick={() => playDemo(AudioAssets.DrumBeat1, "drumbeat_90bpm")}
             >
               <GiDrumKit size={36} />
             </button>
@@ -263,7 +263,7 @@ function App() {
             <button
               type="button"
               style={{ padding: "0.25rem" }}
-              onClick={() => playDemo(AudioAssets.DrumBeat2)}
+              onClick={() => playDemo(AudioAssets.DrumBeat2, "drumbeat2_90bpm")}
             >
               <GiDrumKit size={36} />
             </button>
@@ -273,7 +273,7 @@ function App() {
             <button
               type="button"
               style={{ padding: "0.25rem" }}
-              onClick={() => playDemo(AudioAssets.BassLoop)}
+              onClick={() => playDemo(AudioAssets.BassLoop, "bass_loop_90bpm_got_to_be_real")}
             >
               <GiGuitarBassHead size={36} />
             </button>
