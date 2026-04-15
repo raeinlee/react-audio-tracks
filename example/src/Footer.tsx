@@ -30,7 +30,7 @@ const Footer = (props: Props) => {
       >
         V1.2.4 MIT © 2023{" "}
         <a href="https://github.com/raeinlee" target="_blank">
-          Andy Lee 🔗
+          Raein Andy Lee 🔗
         </a>
       </UI.GlitchedSpan>
       <UI.GlitchedSpan
