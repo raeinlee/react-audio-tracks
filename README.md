@@ -7,9 +7,48 @@
 
 - https://react-audio-tracks.vercel.app/
 
+## 📊 Comparison to Similar Libraries
+
+| Feature | react-audio-tracks | react-h5-audio-player | react-player |
+|---------|-------------------|----------------------|--------------|
+| Multi-track | ✅ Yes | ❌ No | ❌ No |
+| Queue system | ✅ Yes | ❌ No | ❌ No |
+| Captions | ✅ Yes, with built-in intl support and custom metadata handling | ⚠️ Basic | ⚠️ Basic |
+| TypeScript | ✅ Excellent | ⚠️ Partial | ✅ Good |
+| Bundle size | ⚠️ ~15KB | ✅ ~10KB | ❌ ~64KB |
+| Testing | ❌ None | ✅ Yes | ✅ Yes |
+| Documentation | ⚠️ Basic | ✅ Good | ✅ Excellent |
+
+**Unique selling points**:
+- Only library with true multi-track support
+- Advanced queue management with priorities
+- Built-in internationalized subtitle engine
+- Great for complex audio applications (games, music apps, etc.)
+
+## 🎯 Target Users
+
+**Ideal for**:
+- Music/audio streaming apps
+- Educational platforms with narration
+- Games with sound effects and music
+- Podcast/audio book players
+- Complex web applications needing concurrent audio
+
+**Not ideal for**:
+- Native mobile apps (React Native has different APIs using Expo-audio, I might publish one I already built)
+
+## 🤝 Next Steps for Maintainers
+
+1. **Review this analysis** - Validate findings
+2. **Prioritize fixes** - Start with issues
+3. **Set up testing** - Prevent future regressions
+4. **Improve CI/CD** - Automate quality checks
+5. **Plan major version** - If breaking changes needed
+6. **Engage community** - Share roadmap, gather feedback
+
 # Demo source code
 
-- Refer to the [Git repo](https://github.com/AndyLeezard/react-audio-tracks/tree/master/example)
+- Refer to the [Git repo](https://github.com/raeinlee/react-audio-tracks/tree/master/example)
 
 # Example
 
