@@ -6,7 +6,7 @@ import { getFileName, getURLParam } from "./utils"
 // Module
 import { RATM, useAudiotracks } from "."
 // Module customization
-import subtitles from "./subtitles.json"
+import { subtitles } from "./subtitles"
 
 // UI & Components
 import * as Styled from "./UI"
@@ -323,44 +323,48 @@ function App() {
         })}
         <Footer />
       </Styled.Container>
-      <button
-        style={{
-          position: "fixed",
-          top: "50px",
-          left: "50%",
-          translate: "-50%",
-        }}
-        onClick={() =>
-          RATM.registerAudios(
-            [
-              AudioAssets.Intro,
-              {
-                onEnd: () => console.log("1"),
-              },
-            ],
-            [
-              AudioAssets.DrumBeat1,
-              {
-                onEnd: () => console.log("2"),
-              },
-            ],
-            [
-              AudioAssets.DrumBeat2,
-              {
-                onEnd: () => console.log("3"),
-              },
-            ],
-            [
-              AudioAssets.BassLoop,
-              {
-                onEnd: () => console.log("4"),
-              },
-            ]
-          )
-        }
-      >
-        test
-      </button>
+      {import.meta.env.DEV ? (
+        <button
+          style={{
+            position: "fixed",
+            top: "50px",
+            left: "50px",
+            translate: "-50%",
+          }}
+          onClick={() =>
+            RATM.registerAudios(
+              [
+                AudioAssets.Intro,
+                {
+                  onEnd: () => console.log("1"),
+                },
+              ],
+              [
+                AudioAssets.DrumBeat1,
+                {
+                  onEnd: () => console.log("2"),
+                },
+              ],
+              [
+                AudioAssets.DrumBeat2,
+                {
+                  onEnd: () => console.log("3"),
+                },
+              ],
+              [
+                AudioAssets.BassLoop,
+                {
+                  onEnd: () => console.log("4"),
+                },
+              ]
+            )
+          }
+        >
+          test
+        </button>
+      ) : (
+        <></>
+      )}
       <AudioRequestHandler />
     </Styled.Wrapper>
   )
