@@ -1,5 +1,11 @@
 # react-audio-tracks
 
+## 1.2.8
+
+### Patch Changes
+
+- be87fcd: chore: lockfile migration and example app misc fixes
+
 ## 1.2.7
 
 ### Patch Changes
@@ -27,7 +33,6 @@
 
   New property - `useTrackStream` hook provides a new value `trackIsPlaying`, which is a shortcut for `trackInstance.getState().isPlaying`.
   New property - `error` state and `ended` states are separated and distinguished in `AudioItemState`.
-
   - Minor performance improvements and bug fixes.
 
 ## 1.2.3
@@ -119,7 +124,6 @@
 ### Patch Changes
 
 - 5ff4bf1: 1. Jitsi-related type name changes to make it easier to understand.
-
   2. Type name change (`AudioManagerState` => `AudiotrackManagerState`)
 
   3. Dynamic optimization of the hook `useTrackStream` with various options
@@ -164,7 +168,6 @@
 ### Patch Changes
 
 - fb97dc3: 1. New methods: - updateAllTracks - getCurrentCaption
-
   2. Method name change to make it easier to understand: toggleMuteAllSources -> toggleGlobalMute
 
   3. `globalMuted` now has a priority over `track.muted`
@@ -188,16 +191,13 @@
 ### Minor Changes
 
 - ef28a56: 1. new features - togglePlayTrack - resumeTrack
-
   2. new track props
-
      - currentAudio: class - AudioItem
      - isPlaying: boolean
      - loop: boolean
      - autoPlay: boolean - will override queue items.autoPlay when changed.
 
   3. deprecated track props (still supported but will be removed)
-
      - currentlyPlaying: string - use currentAudio instead
 
   4. new audio props
