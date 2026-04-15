@@ -302,7 +302,7 @@ class Track {
     } = audioOptions
     const inhertiedAudioOptions = this.#getInheritedAudioOptions()
     const audio = new Audio(src)
-    const uid = Date.now().toString()
+    const uid = U.uuid()
     audio.setAttribute("id", uid)
     audio.volume =
       (volume ??
@@ -519,17 +519,18 @@ class Track {
 
   private clearAudio = (uid: string, filename: string) => {
     const soundIdx = this.#Queue.findIndex((s) => s.idEqualTo(uid))
-    if (soundIdx) {
+    if (soundIdx === -1) {
       U.log(
-        `Cannot clear audio for uid: ${uid} (track & queue index not found)`
+        `Cannot clear audio for uid: ${uid} (track & queue index not found)`,
+        this.debug
       )
       return
     }
     this.#Queue = U.dropFromArray(this.#Queue, soundIdx)
     const nextAudio = this.#Queue.length ? this.#Queue[0] : undefined
-    U.log(`cleared ${filename}`)
+    U.log(`cleared ${filename}`, this.debug)
     if (nextAudio && this.#State.autoPlay) {
-      U.log(`next playing ${nextAudio.getState().filename}`)
+      U.log(`next playing ${nextAudio.getState().filename}`, this.debug)
       nextAudio.play()
     }
   }
@@ -619,7 +620,7 @@ class Track {
       subset.playbackRate = playbackRate
     }
     subset.updateFrequencyMs = updateFrequencyMs
-    console.log(payload)
+    U.log(`Reconstructing track with payload: ${JSON.stringify(payload)}`, this.debug)
     this.#updateState(subset)
   }
 }

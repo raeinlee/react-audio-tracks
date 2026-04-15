@@ -43,7 +43,7 @@ const detectLocale = () =>
   Intl.DateTimeFormat().resolvedOptions().locale.split("-")[0]!
 
 /**
-A function that returns a universally unique identifier (uuid).  
+A function that returns a universally unique identifier (uuid).
 example: 1b83fd69-abe7-468c-bea1-306a8aa1c81d
 @returns `string` : 32 character uuid (see example)
 */
@@ -71,7 +71,7 @@ function uuid() {
     if (i === 7 || i === 12 || i === 17 || i === 22) {
       uuid[i] = "-"
     } else {
-      uuid[i] = hashTable[Math.floor(Math.random() * hashTable.length - 1)]
+      uuid[i] = hashTable[Math.floor(Math.random() * hashTable.length)]
     }
   }
   return uuid.join("")

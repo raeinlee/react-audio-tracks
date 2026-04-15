@@ -315,7 +315,7 @@ class AudiotrackManager {
         )
         continue
       }
-      const uid = Date.now().toString()
+      const uid = U.uuid()
       let new_message: T.PlayRequest = {
         id: uid,
         src: arg.src,
