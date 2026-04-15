@@ -1,5 +1,12 @@
 # react-audio-tracks
 
+## 1.2.9
+
+### Patch Changes
+
+- ea2a0ed: Fixed issues: queue clearing logic error preventing items at index 1+ from being removed, uuid generation producing undefined values on rare cases where Math.random hits near zero
+- dbe41ea: resolve legacy github account reference
+
 ## 1.2.8
 
 ### Patch Changes
@@ -123,9 +130,7 @@
 
 ### Patch Changes
 
-- 5ff4bf1: 1. Jitsi-related type name changes to make it easier to understand.
-  2. Type name change (`AudioManagerState` => `AudiotrackManagerState`)
-
+- 5ff4bf1: 1. Jitsi-related type name changes to make it easier to understand. 2. Type name change (`AudioManagerState` => `AudiotrackManagerState`)
   3. Dynamic optimization of the hook `useTrackStream` with various options
 
 ## 1.0.2
@@ -167,9 +172,7 @@
 
 ### Patch Changes
 
-- fb97dc3: 1. New methods: - updateAllTracks - getCurrentCaption
-  2. Method name change to make it easier to understand: toggleMuteAllSources -> toggleGlobalMute
-
+- fb97dc3: 1. New methods: - updateAllTracks - getCurrentCaption 2. Method name change to make it easier to understand: toggleMuteAllSources -> toggleGlobalMute
   3. `globalMuted` now has a priority over `track.muted`
 
   4. Minor bug fix (registerAudio) -> when trackIdx was not explicitly given, the default track idx (0) was not properly registered.
@@ -190,13 +193,11 @@
 
 ### Minor Changes
 
-- ef28a56: 1. new features - togglePlayTrack - resumeTrack
-  2. new track props
-     - currentAudio: class - AudioItem
-     - isPlaying: boolean
-     - loop: boolean
-     - autoPlay: boolean - will override queue items.autoPlay when changed.
-
+- ef28a56: 1. new features - togglePlayTrack - resumeTrack 2. new track props
+  - currentAudio: class - AudioItem
+  - isPlaying: boolean
+  - loop: boolean
+  - autoPlay: boolean - will override queue items.autoPlay when changed.
   3. deprecated track props (still supported but will be removed)
      - currentlyPlaying: string - use currentAudio instead
 
