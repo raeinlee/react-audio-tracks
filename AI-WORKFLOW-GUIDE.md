@@ -73,44 +73,6 @@ Quick reference for AI agents working on this codebase.
 
 6. **Test thoroughly**
 
-### Task: Add a Test Suite
-
-1. **Install dependencies**:
-   ```bash
-   pnpm add -D vitest @testing-library/react @testing-library/jest-dom happy-dom
-   ```
-
-2. **Create vitest.config.ts**:
-   ```typescript
-   import { defineConfig } from 'vitest/config'
-
-   export default defineConfig({
-     test: {
-       environment: 'happy-dom',
-       globals: true,
-       setupFiles: ['./src/__tests__/setup.ts']
-     }
-   })
-   ```
-
-3. **Create test structure**:
-   ```
-   src/__tests__/
-   ├── setup.ts
-   ├── AudiotrackManager.test.ts
-   ├── Track.test.ts
-   ├── AudioItem.test.ts
-   └── hooks.test.tsx
-   ```
-
-4. **Add test script** to `package.json`:
-   ```json
-   "scripts": {
-     "test": "vitest",
-     "test:ui": "vitest --ui"
-   }
-   ```
-
 ### Task: Improve Type Safety
 
 **Pattern: Remove non-null assertions**

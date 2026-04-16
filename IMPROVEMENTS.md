@@ -78,22 +78,7 @@ public static registerAudio = (...args: T.RegistrationArgTuple) => {
 
 ## 🚀 Feature Enhancements
 
-### 3. Add Audio Preloading
-**Benefit**: Reduce playback lag
-
-**Implementation**:
-```typescript
-type PreloadStrategy = 'none' | 'metadata' | 'auto'
-
-interface AudioOptions {
-  // ... existing options
-  preload?: PreloadStrategy
-}
-```
-
----
-
-### 4. Add Fade In/Out Support
+### 3. Add Fade In/Out Support
 **Use Case**: Smooth audio transitions
 
 **API Design**:
@@ -112,7 +97,7 @@ RATM.registerAudio('/audio.mp3', {
 
 ---
 
-### 5. Add Audio Visualization Support
+### 4. Add Audio Visualization Support
 **Feature**: Expose AnalyserNode for visualizations
 
 **Implementation**:
@@ -129,23 +114,7 @@ class AudioItem {
 
 ---
 
-### 6. Add Persistent State Option
-**Use Case**: Remember volume/mute across sessions
-
-**Implementation**:
-```typescript
-RATM.initialize({
-  persistState: true,
-  storageKey: 'ratm-state'
-})
-
-// Auto-saves to localStorage
-// Auto-restores on init
-```
-
----
-
-### 7. TypeScript Enhancements
+### 5. TypeScript Enhancements
 **Current**: TypeScript 5.0.4
 **Opportunity**: Use latest TS 5.x features
 
@@ -159,7 +128,7 @@ RATM.initialize({
 
 ## 📚 Documentation Improvements
 
-### 8. Enhance README.md
+### 6. Enhance README.md
 **Add**:
 - Installation instructions
 - Quick start guide
@@ -171,7 +140,7 @@ RATM.initialize({
 - Performance tips
 - Browser compatibility table
 
-### 9. Create CONTRIBUTING.md
+### 7. Create CONTRIBUTING.md
 **Include**:
 - Development setup
 - Code style guidelines
@@ -179,7 +148,7 @@ RATM.initialize({
 - PR process
 - Changeset workflow
 
-### 10. Add API Documentation Site
+### 8. Add API Documentation Site
 **Options**:
 - TypeDoc for auto-generated docs
 - Docusaurus for comprehensive docs site
@@ -189,7 +158,7 @@ RATM.initialize({
 
 ## 🔧 Build & Tooling
 
-### 11. Add Source Maps
+### 9. Add Source Maps
 **Current**: No source maps in production
 **Impact**: Debugging is harder
 
@@ -200,7 +169,7 @@ RATM.initialize({
 }
 ```
 
-### 12. Add Bundle Size Monitoring
+### 10. Add Bundle Size Monitoring
 **Tool**: bundlephobia or size-limit
 
 ```json
@@ -214,7 +183,7 @@ RATM.initialize({
 }
 ```
 
-### 13. Add ESLint Configuration
+### 11. Add ESLint Configuration
 **Currently**: No linting beyond TypeScript
 
 **Setup**:
@@ -232,7 +201,7 @@ pnpm add -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
 
 ## ♿ Accessibility
 
-### 14. Add ARIA Support
+### 12. Add ARIA Support
 **Feature**: Accessibility announcements for audio state
 
 **Implementation**:
@@ -247,7 +216,7 @@ interface AudiotrackManagerSettings {
 "Volume changed to 75%"
 ```
 
-### 15. Add Keyboard Controls
+### 13. Add Keyboard Controls
 **Feature**: Keyboard shortcuts for audio control
 
 **Example**:
@@ -259,7 +228,7 @@ interface AudiotrackManagerSettings {
 
 ## 🎨 Developer Experience
 
-### 16. Add React DevTools Integration
+### 14. Add React DevTools Integration
 **Feature**: Custom DevTools panel for debugging
 
 **Shows**:
@@ -268,7 +237,7 @@ interface AudiotrackManagerSettings {
 - Current audio info
 - Performance metrics
 
-### 17. Add Debug Mode Enhancements
+### 15. Add Debug Mode Enhancements
 **Current**: Basic console.log
 **Enhancement**: Structured logging with levels
 
@@ -287,7 +256,7 @@ RATM.initialize({
 
 ## 📊 Performance
 
-### 18. Optimize Re-renders
+### 16. Optimize Re-renders
 **Issue**: State updates may cause unnecessary re-renders
 
 **Solution**: Use shallow equality checks in hooks
@@ -303,7 +272,7 @@ function useAudiotracks() {
 }
 ```
 
-### 19. Add Virtual Queue
+### 17. Add Virtual Queue
 **Use Case**: Handle very long queues efficiently
 
 **Concept**: Only keep active + next N items in memory
@@ -312,12 +281,12 @@ function useAudiotracks() {
 
 ## 🔒 Security
 
-### 20. Add CSP Compatibility
+### 18. Add CSP Compatibility
 **Ensure**: Works with Content Security Policy
 
 **Test**: Example app with strict CSP headers
 
-### 21. Add Input Validation
+### 19. Add Input Validation
 **Locations**:
 - Audio URL validation
 - Track index bounds checking
@@ -328,7 +297,7 @@ function useAudiotracks() {
 
 ## 📱 Mobile Support
 
-### 22. Improve Mobile Experience
+### 20. Improve Mobile Experience
 **Issues**:
 - Autoplay restrictions
 - Background playback
@@ -336,31 +305,22 @@ function useAudiotracks() {
 **Features**:
 - Better autoplay policy handling
 - Background audio support (Media Session API)
-- Battery-conscious update frequencies
 
 ---
 
 ## Implementation Priority
 
-**Phase 1** (Critical - Do First):
-1. Fix critical bugs (ISSUES.md)
-2. Fix dependency configuration
-3. Add basic tests
-4. Add error handling
+**Phase 1** (High priority - Do First):
+1. Add error handling
 
-**Phase 2** (Important):
-5. Improve type safety
-6. Add JSDoc documentation
-7. Add source maps
-8. Add ESLint
+**Phase 2** (Nice to Have):
+2. Add JSDoc documentation
+3. Add source maps
+4. Add ESLint
+5. Fade in/out
+6. Better documentation
 
-**Phase 3** (Nice to Have):
-9. Audio preloading
-10. Fade in/out
-11. Persistent state
-12. Better documentation
-
-**Phase 4** (Future):
-13. Audio visualization
-14. React DevTools integration
-15. Advanced features
+**Phase 3** (Future):
+7. Audio visualization
+8. React DevTools integration
+9. Advanced features
