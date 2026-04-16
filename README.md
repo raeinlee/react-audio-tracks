@@ -15,8 +15,8 @@
 | Queue system | ✅ Yes | ❌ No | ❌ No |
 | Captions | ✅ Yes, with built-in intl support and custom metadata handling | ⚠️ Basic | ⚠️ Basic |
 | TypeScript | ✅ Excellent | ⚠️ Partial | ✅ Good |
-| Bundle size | ⚠️ ~15KB | ✅ ~10KB | ❌ ~64KB |
-| Testing | ❌ None | ✅ Yes | ✅ Yes |
+| Bundle size | 📨 ~11KB | 📨 ~10KB | 📦 ~64KB |
+| Testing | ✅ Yes | ✅ Yes | ✅ Yes |
 | Documentation | ⚠️ Basic | ✅ Good | ✅ Excellent |
 
 **Unique selling points**:
