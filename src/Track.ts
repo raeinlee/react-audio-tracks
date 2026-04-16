@@ -301,26 +301,26 @@ class Track {
       onResolve,
       onError,
     } = audioOptions
-    const inhertiedAudioOptions = this.#getInheritedAudioOptions()
+    const inheritedAudioOptions = this.#getInheritedAudioOptions()
     const audio = new Audio(src)
     const uid = U.uuid()
     audio.setAttribute("id", uid)
-    audio.preload = preload ?? inhertiedAudioOptions.preload ?? "auto"
+    audio.preload = preload ?? inheritedAudioOptions.preload ?? "auto"
     audio.volume =
       (volume ??
         this.#State.volume ??
-        inhertiedAudioOptions.volume ??
+        inheritedAudioOptions.volume ??
         C.DEFAULT_VOLUME) *
       (this.#getInheritedState()?.masterVolume ?? C.DEFAULT_VOLUME)
     audio.muted =
-      muted ?? this.#State.muted ?? inhertiedAudioOptions.muted ?? false
-    audio.loop = loop ?? this.#State.loop ?? inhertiedAudioOptions.loop ?? false
+      muted ?? this.#State.muted ?? inheritedAudioOptions.muted ?? false
+    audio.loop = loop ?? this.#State.loop ?? inheritedAudioOptions.loop ?? false
     audio.playbackRate =
       playbackRate ??
       this.#State.playbackRate ??
-      inhertiedAudioOptions.playbackRate ??
+      inheritedAudioOptions.playbackRate ??
       1
-    const _locale = this.#getLocale(locale, inhertiedAudioOptions.locale)
+    const _locale = this.#getLocale(locale, inheritedAudioOptions.locale)
     const _keyForSubtitles = keyForSubtitles ?? originalFilename ?? filename
     const _subtitles =
       subtitles ??
