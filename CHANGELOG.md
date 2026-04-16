@@ -1,5 +1,11 @@
 # react-audio-tracks
 
+## 1.2.10
+
+### Patch Changes
+
+- 9990b19: lib quality fix: implement preload audio option ("auto" by default), define react as peerdep, implement test suite, fix minor issues to resolve edge cases, fix typos
+
 ## 1.2.9
 
 ### Patch Changes
@@ -130,8 +136,7 @@
 
 ### Patch Changes
 
-- 5ff4bf1: 1. Jitsi-related type name changes to make it easier to understand. 2. Type name change (`AudioManagerState` => `AudiotrackManagerState`)
-  3. Dynamic optimization of the hook `useTrackStream` with various options
+- 5ff4bf1: 1. Jitsi-related type name changes to make it easier to understand. 2. Type name change (`AudioManagerState` => `AudiotrackManagerState`) 3. Dynamic optimization of the hook `useTrackStream` with various options
 
 ## 1.0.2
 
@@ -172,9 +177,7 @@
 
 ### Patch Changes
 
-- fb97dc3: 1. New methods: - updateAllTracks - getCurrentCaption 2. Method name change to make it easier to understand: toggleMuteAllSources -> toggleGlobalMute
-  3. `globalMuted` now has a priority over `track.muted`
-
+- fb97dc3: 1. New methods: - updateAllTracks - getCurrentCaption 2. Method name change to make it easier to understand: toggleMuteAllSources -> toggleGlobalMute 3. `globalMuted` now has a priority over `track.muted`
   4. Minor bug fix (registerAudio) -> when trackIdx was not explicitly given, the default track idx (0) was not properly registered.
 
 ## 0.11.2
