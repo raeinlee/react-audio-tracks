@@ -7,8 +7,10 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsup index.ts --format cjs,esm --dts",
-    "release": "pnpm run build && changeset publish",
+    "build": "tsup index.ts --format cjs,esm --dts --external react",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "release": "pnpm test && pnpm run build && changeset publish",
     "export-module": "module-export.bat",
     "lint": "tsc"
   },
@@ -33,14 +35,21 @@
     "audio tracks",
     "react-audio-tracks"
   ],
+  "peerDependencies": {
+    "react": ">=18.0.0"
+  },
   "devDependencies": {
     "@changesets/cli": "^2.26.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^14.3.1",
     "@types/react": "^18.0.35",
+    "@types/react-dom": "^18.3.7",
+    "jsdom": "^29.0.2",
     "prettier": "^3.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.3.1",
     "tsup": "^6.7.0",
-    "typescript": "^5.0.4"
-  },
-  "dependencies": {
-    "react": "^18.2.0"
+    "typescript": "^5.0.4",
+    "vitest": "^4.1.4"
   }
 }
