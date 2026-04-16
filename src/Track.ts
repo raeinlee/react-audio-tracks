@@ -551,9 +551,12 @@ class Track {
         this.#Queue = this.#Queue.slice(0, 1)
         queue = queue.slice(0, 1)
       }
-      this.#Queue[0]!.end()
+      const last_queue = this.#Queue[0]
+      if (last_queue) {
+        last_queue.end()
+      }
     }
-    this.#updateState({ queue })
+    // this.#updateState({ queue })
   }
 
   /**

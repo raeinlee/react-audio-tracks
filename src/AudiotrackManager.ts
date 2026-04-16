@@ -181,8 +181,8 @@ class AudiotrackManager {
    */
   static getTrack(index: number): Track | null {
     if (!this.#Tracks.length) return null
-    if (index < 0 && index >= this.#Tracks.length) return null
-    return this.#Tracks[index]!
+    if (index < 0 || index >= this.#Tracks.length) return null
+    return this.#Tracks[index] ?? null
   }
 
   /**
@@ -190,7 +190,7 @@ class AudiotrackManager {
    */
   static getTrackState(index: number): T.TrackState | null {
     if (!this.#State.tracks.length) return null
-    if (index < 0 && index >= this.#Tracks.length) return null
+    if (index < 0 || index >= this.#Tracks.length) return null
     return this.#State.tracks[index]!
   }
 
