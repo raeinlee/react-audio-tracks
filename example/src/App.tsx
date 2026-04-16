@@ -74,6 +74,12 @@ function App() {
       supportedLocales: ["en", "fr", "ko"],
     })
     RATM.updateAllTracks({ autoPlay: true, allowDuplicates: true })
+
+    // Preload all known audio assets so they are ready before the user clicks
+    Object.values(AudioAssets).forEach((src) => {
+      const audio = new Audio(src)
+      audio.preload = "auto"
+    })
   }, [])
 
   useEffect(() => {

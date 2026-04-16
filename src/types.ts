@@ -122,6 +122,17 @@ export type AudioOptions = {
   originalFilename?: string
 
   /**
+   * Controls how aggressively the browser downloads the audio file.
+   *
+   * - `"auto"` — download the full file as soon as possible (recommended for queued audio)
+   * - `"metadata"` — only download duration and format info
+   * - `"none"` — do not preload anything
+   *
+   * Default: `"auto"`
+   */
+  preload?: "none" | "metadata" | "auto"
+
+  /**
    * The timeupdate event is fired when the time indicated by the currentTime attribute has been updated.
    *
    * In most browsers, this event is fired between 4 to 66 times per second (every 250 to 15 milliseconds), depending on the system load and the browser's internal scheduling.

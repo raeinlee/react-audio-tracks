@@ -289,6 +289,7 @@ class Track {
       muted,
       locale,
       playbackRate,
+      preload,
       keyForSubtitles,
       subtitles,
       originalFilename,
@@ -304,6 +305,7 @@ class Track {
     const audio = new Audio(src)
     const uid = U.uuid()
     audio.setAttribute("id", uid)
+    audio.preload = preload ?? inhertiedAudioOptions.preload ?? "auto"
     audio.volume =
       (volume ??
         this.#State.volume ??
